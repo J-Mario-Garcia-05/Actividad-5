@@ -44,6 +44,16 @@ while opcion != "5":
                         estudiante.mostrar_informacion()
                 else:
                     print("No hay estudiantes registrados")
-
+            case "3":
+                if lista_estudiantes:
+                    carne = input("Ingrese el Carné del estudiante que desea buscar: ")
+                    for estudiante in lista_estudiantes:
+                        if estudiante.carne == carne:
+                            estudiante.mostrar_informacion()
+                            carne = -1
+                    if carne != -1:
+                        print("No hy ningún estudiante con el número de carné.")
+                else:
+                    print("No hay estudiantes registrados")
     except ValueError:
         print("A ocurrido un error, dato ingresado no válido")
