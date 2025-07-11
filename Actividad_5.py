@@ -16,6 +16,7 @@ def nota_final(self, value):
     def mostrar_informacion(self):
         print(f"Nombre: {self.nombre}, carne: {self.carne}, carrera: {self.carrera}, nota final: {self.nota_final}")
 
+lista_estudiantes = []
 opcion  = 0
 while opcion != "5":
     print("==MENÚ==")
@@ -24,3 +25,17 @@ while opcion != "5":
     print("3.Buscar estudiante")
     print("4.Calcular promedio de notas de estudiantes")
     print("5.Salir")
+    try:
+        opcion = int(input("\nSeleccione una opçión: "))
+        match opcion:
+            case "1":
+                print("Ingrese los datos del estudiante:")
+                nombre = input("Nombre: ")
+                carne = input("Carné: ")
+                carrera = input("Carrera: ")
+                nota_final = input("Nota final: ")
+                registrar_estudiante = Estudiante(nombre, carne, carrera, nota_final)
+                lista_estudiantes.append(registrar_estudiante)
+                print("El registro se completo con exito.")
+    except ValueError:
+        print("A ocurrido un error, dato ingresado no válido")
