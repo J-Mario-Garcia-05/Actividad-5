@@ -17,26 +17,27 @@ class Estudiante:
         print(f"Nombre: {self.nombre}, carne: {self.carne}, carrera: {self.carrera}, nota final: {self.nota_final}")
 
 lista_estudiantes = []
-opcion  = 0
+numero_carne = 1001
+opcion  = "0"
 while opcion != "5":
-    print("==MENÚ==")
+    print("\t==MENÚ==")
     print("1.Registrar estudiante")
     print("2.Mostrar estudiantes registrados")
     print("3.Buscar estudiante")
     print("4.Calcular promedio de notas de estudiantes")
     print("5.Salir")
     try:
-        opcion = int(input("\nSeleccione una opçión: "))
+        opcion = input("\nSeleccione una opción: ")
         match opcion:
             case "1":
                 print("Ingrese los datos del estudiante:")
                 nombre = input("Nombre: ")
-                carne = int(input("Carné: "))
                 carrera = input("Carrera: ")
                 nota_final = int(input("Nota final: "))
-                registrar_estudiante = Estudiante(nombre, carne, carrera, nota_final)
+                registrar_estudiante = Estudiante(nombre, numero_carne, carrera, nota_final)
                 lista_estudiantes.append(registrar_estudiante)
-                print("El registro se completo con exito.")
+                numero_carne += 1
+                print(f"El registro se completo con exito, número de carné asignado {numero_carne}.")
             case "2":
                 if lista_estudiantes:
                     print("Estudiantes registrados:")
@@ -52,7 +53,7 @@ while opcion != "5":
                             estudiante.mostrar_informacion()
                             carne = -1
                     if carne != -1:
-                        print("No hy ningún estudiante con el número de carné.")
+                        print("No hay ningún estudiante con el número de carné.")
                 else:
                     print("No hay estudiantes registrados")
             case "4":
