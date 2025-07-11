@@ -31,9 +31,9 @@ while opcion != "5":
             case "1":
                 print("Ingrese los datos del estudiante:")
                 nombre = input("Nombre: ")
-                carne = input("Carné: ")
+                carne = int(input("Carné: "))
                 carrera = input("Carrera: ")
-                nota_final = input("Nota final: ")
+                nota_final = int(input("Nota final: "))
                 registrar_estudiante = Estudiante(nombre, carne, carrera, nota_final)
                 lista_estudiantes.append(registrar_estudiante)
                 print("El registro se completo con exito.")
@@ -46,13 +46,21 @@ while opcion != "5":
                     print("No hay estudiantes registrados")
             case "3":
                 if lista_estudiantes:
-                    carne = input("Ingrese el Carné del estudiante que desea buscar: ")
+                    carne = int(input("Ingrese el Carné del estudiante que desea buscar: "))
                     for estudiante in lista_estudiantes:
                         if estudiante.carne == carne:
                             estudiante.mostrar_informacion()
                             carne = -1
                     if carne != -1:
                         print("No hy ningún estudiante con el número de carné.")
+                else:
+                    print("No hay estudiantes registrados")
+            case "4":
+                if lista_estudiantes:
+                    sumar = 0
+                    for estudiante in lista_estudiantes:
+                        sumar += estudiante.nota_final
+                    print(f"Promedio de notas de estudiantes: {sumar /len(lista_estudiantes)}")
                 else:
                     print("No hay estudiantes registrados")
     except ValueError:
