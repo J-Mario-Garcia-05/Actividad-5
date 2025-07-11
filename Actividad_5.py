@@ -37,5 +37,13 @@ while opcion != "5":
                 registrar_estudiante = Estudiante(nombre, carne, carrera, nota_final)
                 lista_estudiantes.append(registrar_estudiante)
                 print("El registro se completo con exito.")
+            case "2":
+                if lista_estudiantes:
+                    print("Estudiantes registrados:")
+                    for estudiante in lista_estudiantes:
+                        estudiante.mostrar_informacion()
+                else:
+                    print("No hay estudiantes registrados")
+
     except ValueError:
         print("A ocurrido un error, dato ingresado no válido")
