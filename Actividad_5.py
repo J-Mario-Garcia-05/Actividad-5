@@ -17,7 +17,7 @@ class Estudiante:
         print(f"Nombre: {self.nombre}, carne: {self.carne}, carrera: {self.carrera}, nota final: {self.nota_final}")
 
 lista_estudiantes = []
-numero_carne = 1001
+numero_carne = 10001
 opcion  = "0"
 while opcion != "5":
     print("\t==MENÚ==")
@@ -36,8 +36,8 @@ while opcion != "5":
                 nota_final = int(input("Nota final: "))
                 registrar_estudiante = Estudiante(nombre, numero_carne, carrera, nota_final)
                 lista_estudiantes.append(registrar_estudiante)
-                numero_carne += 1
                 print(f"El registro se completo con exito, número de carné asignado {numero_carne}.")
+                numero_carne += 1
             case "2":
                 if lista_estudiantes:
                     print("Estudiantes registrados:")
