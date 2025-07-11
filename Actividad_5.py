@@ -4,15 +4,15 @@ class Estudiante:
         self.carne = carne
         self.carrera = carrera
         self.__nota_final = nota_final
-@property
-def nota_final(self):
-    return self.__nota_final
-@nota_final.setter
-def nota_final(self, value):
-    if 0 <= value <= 100:
-        self.__nota_final = value
-    else:
-        raise ValueError("Error: la nota que ingreso no es válida")
+    @property
+    def nota_final(self):
+        return self.__nota_final
+    @nota_final.setter
+    def nota_final(self, value):
+        if 0 <= value <= 100:
+            self.__nota_final = value
+        else:
+            raise ValueError("Error: la nota que ingreso no es válida")
     def mostrar_informacion(self):
         print(f"Nombre: {self.nombre}, carne: {self.carne}, carrera: {self.carrera}, nota final: {self.nota_final}")
 
@@ -63,5 +63,11 @@ while opcion != "5":
                     print(f"Promedio de notas de estudiantes: {sumar /len(lista_estudiantes)}")
                 else:
                     print("No hay estudiantes registrados")
-    except ValueError:
-        print("A ocurrido un error, dato ingresado no válido")
+            case "5":
+                print("Saliendo, que tenga buen día.")
+            case __:
+                print(f"La opción {opcion} no está disponible.")
+        if opcion != "5":
+            input("Presione ENTER para continuar: ")
+    except Exception as e:
+        print("ERROR: "+ str(e))
